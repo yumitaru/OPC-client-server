@@ -9,8 +9,8 @@ class OPCClient:
         self._client = Client(self._url)
         self._client.connect()
         self._nodeId = "ns=2;i="
-        self._tab = [4,5,6,7]
-        self._tab2 = ['X-coordinate','Y-coordinate', 'Heading', 'Current segment']
+        self._tab = [4,5,6,7,8]
+        self._tab2 = ['X-coordinate','Y-coordinate', 'Heading', 'Current segment','Battery cell voltage']
         self._NNS = None
         self._frame6000 = None
 
@@ -20,7 +20,8 @@ class OPCClient:
                                                                 'X-coordinate',
                                                                 'Y-coordinate',
                                                                 'Heading',
-                                                                'Current segment'
+                                                                'Current segment',
+                                                                'Battery cell voltage'
                                                                 ],
                                                             engine='python')
         time.sleep(5)

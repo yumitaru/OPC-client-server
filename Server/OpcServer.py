@@ -32,14 +32,16 @@ class OpcServer:
         CoBotAGV_Now = objects.add_folder(self._addspace, "CoBotAGV_Now")
         FN_ID_6000 = CoBotAGV_Now.add_object(self._addspace, "FN_ID_6000")
         nns = FN_ID_6000.add_folder(self._addspace, "[NNS] - Natural Navigation Signals")
-        var1 = nns.add_variable(self._addspace, "Heading", 0.0, datatype=opcua.ua.NodeId(opcua.ua.ObjectIds.Float))
-        var2 = nns.add_variable(self._addspace, "X-coordinate", 0.0, datatype=opcua.ua.NodeId(opcua.ua.ObjectIds.Float))
-        var3 = nns.add_variable(self._addspace, "Y-coordinate", 0.0, datatype=opcua.ua.NodeId(opcua.ua.ObjectIds.Float))
+        var1 = nns.add_variable(self._addspace, "X-coordinate", 0.0, datatype=opcua.ua.NodeId(opcua.ua.ObjectIds.Float))
+        var2 = nns.add_variable(self._addspace, "Y-coordinate", 0.0, datatype=opcua.ua.NodeId(opcua.ua.ObjectIds.Float))
+        var3 = nns.add_variable(self._addspace, "Heading", 0.0, datatype=opcua.ua.NodeId(opcua.ua.ObjectIds.Float))
         var4 = nns.add_variable(self._addspace, "Current segment", 0.0, datatype=opcua.ua.NodeId(opcua.ua.ObjectIds.Float))
+        var5 = nns.add_variable(self._addspace, "Battery cell voltage", 0, datatype=opcua.ua.NodeId(opcua.ua.ObjectIds.UInt16))
         var1.set_writable()
         var2.set_writable()
         var3.set_writable()
         var4.set_writable()
+        var5.set_writable()
         
 
     def StartServer(self):
