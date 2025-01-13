@@ -7,24 +7,15 @@ class OpcServer:
     def __init__(self):
 
         self._url = "opc.tcp://localhost:4841/freeopcua/server/"
-
         self._server = Server()
         self._addspace = None
         
     def SetServer(self):
         self._server.set_endpoint(self._url)
 
-        # Setup our own namespace, not really necessary but should be as informative as possible
         name = "OPCUA_SIMULATION_SERVER"
         self._addspace = self._server.register_namespace(name)
 
-    # def ReadCSV(self):
-    #     df = pd.read_csv("michal.csv", usecols=[
-    #                                                                     'X-coordinate',
-    #                                                                     'Y-coordinate',
-    #                                                                     'Heading'
-    #                                                                     ],
-    #                                                                 engine='python')
         
 
     def SetObjects(self):
@@ -50,19 +41,8 @@ class OpcServer:
             while True:
                 time.sleep(0.2)
         finally:
-            # Close the connection, cleanup
             self._server.stop()
             print("Server stopped")
-
-    # def HandleWritingValues(self):
-    #     FinishFlag = False
-    #     i = 0
-    #     while not FinishFlag:
-            
-
-
-
-    #         time.sleep(0.1)
 
 
 

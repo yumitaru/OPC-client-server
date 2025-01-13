@@ -37,5 +37,5 @@ class OPCClient:
                 self.frame6000.set_value(input)
                 print(value)
             it +=1
-            time.sleep(2)
+            time.sleep(0.5)
         
